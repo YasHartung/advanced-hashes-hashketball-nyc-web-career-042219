@@ -249,12 +249,13 @@ def big_shoe_rebounds
                     max_shoe = stat_data
                     max_loc = location
                     max_play_name = player_stats
-                    binding.pry  
+                    binding.pry
             end      end      end
             end
           end
         end
       end
     end
+    
     game_hash[max_loc][:players][max_play_name][:rebounds]
 end
