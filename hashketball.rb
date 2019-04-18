@@ -168,7 +168,6 @@ def shoe_size (player)
     end
 end
 
-
 def team_colors (team_name)
   game_hash.each do |location, team_data|
 
@@ -244,17 +243,14 @@ def big_shoe_rebounds
       if attribute == :players
           data.each do |data_item|
             data_item.each do |player_stats, stats|
-
               stats.each do |stat_name, stat_data|
                 if stat_name == :shoe
                   if stat_data > max_shoe
                     max_shoe = stat_data
                     max_loc = location
                     max_play_name = player_stats
-                    binding.pry
-                  end
-                end
-              end
+                    binding.pry  
+            end      end      end
             end
           end
         end
