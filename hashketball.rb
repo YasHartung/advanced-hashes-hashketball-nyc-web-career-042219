@@ -249,11 +249,11 @@ def big_shoe_rebounds
                   if stat_data > max_shoe
                     max_shoe = stat_data
                     flag = 1
-                  end      
+                  end
                 end
                 if stat_name == :rebounds && flag == 1
                   return stat_data
-                end      
+                end
               end
             end
           end
