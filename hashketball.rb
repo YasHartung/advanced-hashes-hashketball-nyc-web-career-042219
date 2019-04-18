@@ -236,8 +236,9 @@ end
 
 def big_shoe_rebounds
   max_shoe = 0
-  max_loc = ""
+  flag = 0
   max_play_name = ""
+  max_rebounds = 0
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
@@ -247,15 +248,16 @@ def big_shoe_rebounds
                 if stat_name == :shoe
                   if stat_data > max_shoe
                     max_shoe = stat_data
-                    max_loc = location
-                    max_play_name = player_stats
-                    binding.pry
-            end      end      end
+                    flag = 1
+                  end      
+                end
+                if stat_name == :rebounds && flag == 1
+                  return stat_data
+                end      
+              end
             end
           end
         end
       end
     end
-    
-    game_hash[max_loc][:players][max_play_name][:rebounds]
 end
